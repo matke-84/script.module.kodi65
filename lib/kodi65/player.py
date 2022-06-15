@@ -3,9 +3,6 @@
 # Copyright (C) 2015 - Philipp Temminghoff <phil65@kodi.tv>
 # This program is Free Software see LICENSE file for details
 
-from __future__ import absolute_import
-from __future__ import unicode_literals
-
 import xbmc
 import xbmcgui
 
@@ -33,8 +30,7 @@ class VideoPlayer(xbmc.Player):
         vid = utils.get_youtube_info(youtube_id)
         if not vid:
             return None, None
-        listitem = xbmcgui.ListItem(label=vid.title,
-                                    thumbnailImage=vid.thumbnail)
+        listitem = xbmcgui.ListItem(label=vid.title)
         listitem.setInfo(type='video',
                          infoLabels={"genre": vid.sourceName,
                                      "plot": vid.description})
